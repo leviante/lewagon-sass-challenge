@@ -1,1 +1,346 @@
-$primary-color: #fff;
+@import "config";
+
+// ------------------------------------------------------------------ //
+// -------------------------- GLOBAL RESET -------------------------- //
+// ------------------------------------------------------------------ //
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// ------------------------------------------------------------------ //
+// --------------------------    HEADER    -------------------------- //
+// ------------------------------------------------------------------ //
+#header {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: transparent;
+  height: auto;
+  width: 100%;
+  @include easeOut();
+
+  .logo {
+    width: 55px;
+    height: 55px;
+    margin: 5px 0 0 2rem;
+
+    img {
+      width: 100%;
+    }
+  }
+  //Black header background after scrolling is occured
+  &.blk-header {
+    background-color: #222;
+    @include easeOut();
+  }
+
+  #header-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+
+    .nav-links {
+      margin: 8px;
+
+      .link {
+        display: inline-block;
+        font-family: "Questrial", sans-serif;
+        letter-spacing: 0.2px;
+        margin-right: 20px;
+        text-decoration: none;
+        color: #fff;
+
+        &:last-child {
+          background-color: #ee5f5c;
+          border-radius: 3px;
+          font-family: "Encode Sans Semi Expanded", sans-serif;
+          font-weight: bold;
+          font-size: 13px;
+          padding: 13px 10px;
+        }
+
+        &:hover {
+          color: $effect-color;
+          @include easeOut;
+        }
+
+        &.order-btn:hover {
+          background-color: darken(#ee5f5c, 35);
+          color: #fff;
+        }
+      }
+      //Dropdown button
+      .follow-us-dropdown {
+        display: inline-block;
+        //Need relative for abs positioned dropdown menu
+        position: relative;
+
+        .follow-us {
+          background: transparent;
+          cursor: pointer;
+          font-size: 16px;
+          border: none;
+
+          &:focus {
+            outline-width: 0;
+          }
+
+          i {
+            position: relative;
+            bottom: 3px;
+          }
+        }
+        //Dropdown content
+        .follow-us-content {
+          visibility: hidden;
+          opacity: 0;
+          position: absolute;
+          top: 50px;
+          right: -15px;
+          background-color: white;
+          width: 150px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+          @include easeOut();
+
+          a {
+            display: block;
+            text-decoration: none;
+            font-family: "Questrial", sans-serif;
+            color: #333;
+            margin: 5px 0px;
+            padding: 10px 0px 5px 15px;
+            width: 100%;
+
+            &:hover {
+              @include easeOut();
+              background: darken(white, 10);
+            }
+          }
+          //Add this with JS event listeners
+          &.show {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ------------------------------------------------------------------ //
+// -------------------------- LANDING PAGE -------------------------- //
+// ------------------------------------------------------------------ //
+
+#landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: url(../img/landing_background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  width: 100%;
+  height: 100vh;
+
+  .branding,
+  .motto,
+  .order-btn {
+    animation-name: comeThrough;
+    animation-duration: 2s;
+    @include easeOut();
+  }
+
+  .branding {
+    font-family: "Montserrat", sans-serif;
+    font-size: 70px;
+    font-weight: 200;
+    margin: 10rem 0 2rem 3rem;
+  }
+
+  .motto {
+    display: inline-block;
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-size: 25px;
+    line-height: 2.1;
+    margin: 0 3rem 1rem 3rem;
+  }
+
+  .order-btn {
+    background: transparent;
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: "Montserrat", sans-serif;
+    border: 1px solid whitesmoke;
+    border-radius: 18px;
+    padding: 12px 14px;
+    margin-left: 3rem;
+
+    &:hover {
+      color: #fff;
+      border-color: #fff;
+      @include easeOut();
+    }
+  }
+}
+
+// ------------------------------------------------------------------ //
+// -------------------------- INFO SECTION -------------------------- //
+// ------------------------------------------------------------------ //
+
+#info-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #459ae0;
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    width: 90%;
+    margin: 10rem 0 8rem 0;
+
+    .info-element {
+      display: flex;
+      opacity: 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: darken(white, 5);
+      text-align: center;
+      padding: 20px;
+
+      h3 {
+        font-family: "Questrial", sans-serif;
+        font-size: 22px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-family: "Encode Sans Semi Expanded", sans-serif;
+        span {
+          font-weight: bold;
+        }
+      }
+
+      &.show {
+        opacity: 1;
+        @include easeOut();
+      }
+
+      @for $x from 1 through 4 {
+        &:nth-child(#{$x}) {
+          transition-delay: 0.1s * $x;
+        }
+      }
+    }
+  }
+}
+
+// ------------------------------------------------------------------ //
+// -------------------------- NEWS SECTION -------------------------- //
+// ------------------------------------------------------------------ //
+
+#get-news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #eee;
+
+  h2 {
+    margin: 10rem 0 2rem 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    font-weight: 200;
+  }
+
+  p {
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    margin-bottom: 1rem;
+  }
+
+  #email-input {
+    font-size: 16px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    width: 200px;
+    height: 35px;
+    padding: 10px;
+  }
+
+  #btn-subscribe {
+    background-color: #459ae0;
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-size: 16px;
+    color: white;
+    padding: 8px 10px;
+    border: 1px solid #459ae0;
+    border-radius: 3px;
+
+    &:hover {
+      background-color: darken(#459ae0, 17);
+      @include easeOut();
+    }
+  }
+}
+
+// ------------------------------------------------------------------ //
+// --------------------------    FOOTER    -------------------------- //
+// ------------------------------------------------------------------ //
+
+#main-footer {
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  min-height: 20vh;
+
+  .social-links {
+    margin: 0 3rem 0 6rem;
+
+    .footer-link {
+      display: inline-block;
+      color: #eee;
+      text-decoration: none;
+      font-size: 30px;
+      margin: 10px;
+
+      &:hover {
+        color: #fdb630;
+        @include easeOut();
+      }
+    }
+  }
+
+  .footer-text {
+    color: #eee;
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    margin: 1rem 6rem 1rem auto;
+
+    p {
+      margin: 3px 0 10px 0;
+    }
+  }
+}
+
+// -------------------------------------------------------------------------------//
+// -------------------------- SECTION TRANSITION BUTTON --------------------------//
+// -------------------------------------------------------------------------------//
+
+.next-section {
+  align-self: center;
+  color: white;
+  font-size: 2rem;
+  margin: auto 0 2rem 0;
+  height: 50px;
+  animation-duration: 2s;
+  animation-name: nextSection;
+  animation-iteration-count: infinite;
+}
