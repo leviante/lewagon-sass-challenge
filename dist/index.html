@@ -14,6 +14,36 @@
     <script src="https://kit.fontawesome.com/ba43667ffc.js"></script>
   </head>
   <body>
+    <div class="form-div">
+      <form id="order-form" action="">
+        <div class="form-title">
+          <p>Order your stylus</p>
+          <span class="exit-form"><i class="fas fa-times"></i></span>
+        </div>
+        <label for="email" class="label">Your Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="form-input"
+          required
+          placeholder="Enter your email here..."
+        />
+        <label for="telNo" class="label"
+          >Your telephone number (in the form xxx-xxx-xxxx):
+        </label>
+        <input
+          id="telNo"
+          class="form-input"
+          name="telNo"
+          type="tel"
+          required
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          placeholder="123-123-1231"
+        />
+        <button type="submit" class="submit-btn">Join the wait list</button>
+      </form>
+    </div>
     <header id="header">
       <a href="#" class="logo">
         <img src="img/logo.svg" alt="" />
@@ -35,7 +65,7 @@
               <a href=""><i class="fab fa-twitter-square"></i> Twitter</a>
             </div>
           </div>
-          <a href="#" class="link order-btn">Order your stylus</a>
+          <a class="link order-btn">Order your stylus</a>
         </div>
       </nav>
     </header>
@@ -45,7 +75,7 @@
         Turn your pen into your best friend.<br />Make every line you write
         count..
       </p>
-      <a href="#" class="order-btn">GET YOUR STYLUS</a>
+      <a id="order-stylus" class="order-btn">GET YOUR STYLUS</a>
       <a href="#info-section" class="next-section"
         ><i class="fas fa-chevron-down"></i
       ></a>

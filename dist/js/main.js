@@ -4,6 +4,12 @@ const dropdownContent = document.querySelector(".follow-us-content");
 const header = document.querySelector("#header");
 const info = document.querySelectorAll(".info-element");
 
+//Selecting for popup form
+const orderForm = document.querySelector("#order-form");
+const orderBtn = document.querySelectorAll(".order-btn");
+const formDiv = document.querySelector(".form-div");
+const exitBtn = document.querySelector(".exit-form");
+
 //get window height (for content animation)
 let viewportHeight = window.innerHeight;
 
@@ -13,6 +19,30 @@ followUs.addEventListener("click", showDropdown);
 
 //Black background in header upon scrolling
 window.addEventListener("scroll", setHeaderBackground);
+
+//Order form appearance, listen click event
+let stateClicked = false;
+for (let btn of orderBtn) {
+  btn.addEventListener("click", showForm);
+}
+
+//exit form click events
+exitBtn.addEventListener("click", exitForm);
+
+//listen document to click-close modal form page
+document.addEventListener("click", e => {
+  if (stateClicked == false) {
+    console.log("form is not opened yet.");
+  }
+  if (stateClicked == true) {
+    if (e.target == formDiv) {
+      console.log("so closeeeee!!");
+      exitForm();
+    } else {
+      return;
+    }
+  }
+});
 
 //Event listener callbacks
 
@@ -46,6 +76,29 @@ function setHeaderBackground() {
       infoEle.classList.remove("show");
     }
   });
+}
+
+//Show Form
+function showForm() {
+  stateClicked = true;
+  formDiv.classList.add("show");
+  orderForm.classList.add("show");
+  //Cancel scrolling while form is open
+  document.getElementsByTagName("body")[0].style.overflow = "hidden";
+}
+
+//Exit Form
+function exitForm() {
+  formDiv.classList.remove("show");
+  orderForm.classList.remove("show");
+  stateClicked = false;
+  //Re-enable scrolling
+  document.getElementsByTagName("body")[0].style.overflow = "visible";
+}
+
+//isLocalNode
+function isLocalNode(node, target) {
+  return node.contains(target);
 }
 
 //------------------------------------------------------------------------------//

@@ -69,6 +69,7 @@
         }
 
         &.order-btn:hover {
+          cursor: pointer;
           background-color: darken(#ee5f5c, 35);
           color: #fff;
         }
@@ -182,6 +183,7 @@
     margin-left: 3rem;
 
     &:hover {
+      cursor: pointer;
       color: #fff;
       border-color: #fff;
       @include easeOut();
@@ -512,3 +514,104 @@
   animation-name: nextSection;
   animation-iteration-count: infinite;
 }
+
+// -------------------------------------------------------------------------------//
+// ---------------------------------- ORDER FORM ---------------------------------//
+// -------------------------------------------------------------------------------//
+
+.form-div {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 0.5s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0.6;
+    z-index: -1;
+  }
+
+  #order-form {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    margin: 15px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 25px 6px #444;
+    width: 600px;
+    @include easeOut;
+
+    .form-title {
+      display: flex;
+      font-family: "Montserrat", sans-serif;
+      font-size: 20px;
+      border-bottom: 1px solid darken(#eee, 20);
+      padding: 15px 10px;
+
+      span {
+        font-size: 15px;
+        margin: 0 5px 0 auto;
+        opacity: 0.2;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+    .label {
+      font-family: "Encode Sans Semi Expanded", sans-serif;
+      font-weight: bold;
+      margin: 15px 0 5px 12px;
+    }
+
+    .form-input {
+      font-size: 14px;
+      border: 1px solid grey;
+      border-radius: 3px;
+      padding-left: 12px;
+      margin: 0 12px 0 12px;
+      height: 35px;
+    }
+
+    .submit-btn {
+      align-self: flex-start;
+      background-color: #ee5f5c;
+      color: #fff;
+      font-family: "Questrial", sans-serif;
+      font-size: 20px;
+      border: none;
+      border-radius: 5px;
+      padding: 13px 12px;
+      margin: 15px 0 15px 12px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &.show {
+      animation-name: slideForm;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      @include easeOut;
+    }
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@import "mobile";
