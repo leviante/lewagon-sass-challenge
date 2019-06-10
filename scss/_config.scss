@@ -1,4 +1,10 @@
 $effect-color: #fdb630;
+$button-colors: (
+  basic: #ee5f5c,
+  smart: #459ae0,
+  speed: #eb7e21,
+  vintage: #32b796
+);
 
 @mixin easeOut {
   transition: all 0.3s ease-out;
