@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Expanded:300,600|Montserrat:200|Questrial&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Styl.us Challenge</title>
+    <!-- Adding FontAwesome Kit -->
+    <script src="https://kit.fontawesome.com/ba43667ffc.js"></script>
+  </head>
+  <body>
+    <div class="form-div">
+      <form id="order-form" action="">
+        <div class="form-title">
+          <p>Order your stylus</p>
+          <span class="exit-form"><i class="fas fa-times"></i></span>
+        </div>
+        <label for="email" class="label">Your Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="form-input"
+          required
+          placeholder="Enter your email here..."
+        />
+        <label for="telNo" class="label"
+          >Your telephone number (in the form xxx-xxx-xxxx):
+        </label>
+        <input
+          id="telNo"
+          class="form-input"
+          name="telNo"
+          type="tel"
+          required
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          placeholder="123-123-1231"
+        />
+        <button type="submit" class="submit-btn">Join the wait list</button>
+      </form>
+    </div>
+    <header id="header">
+      <a href="index.html" target="_blank" class="logo">
+        <img src="img/logo.svg" alt="" />
+      </a>
+      <nav id="header-nav">
+        <div class="nav-links">
+          <a href="pricing.html" target="_blank" class="link">
+            <i class="fas fa-dollar-sign"></i> Pricing
+          </a>
+          <a href="contact.html" class="link">
+            <i class="far fa-envelope"></i> Contact
+          </a>
+          <div class="follow-us-dropdown">
+            <button class="link follow-us">
+              Follow Us <i class="fas fa-sort-down"></i>
+            </button>
+            <div class="follow-us-content">
+              <a href="#"><i class="fab fa-facebook-square"></i> Facebook</a>
+              <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
+            </div>
+          </div>
+          <a class="link order-btn">Order your stylus</a>
+        </div>
+      </nav>
+    </header>
+    <section id="team-section">
+      <h1 class="title">Our Team</h1>
+      <div class="team-container">
+        <div class="team-element">
+          <img
+            src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            alt="basic"
+          />
+          <h2 class="team-name">
+            Paul
+          </h2>
+        </div>
+        <div class="team-element">
+          <img
+            src="https://images.pexels.com/photos/555790/pexels-photo-555790.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            alt="smart"
+          />
+          <h2 class="team-name">
+            John
+          </h2>
+        </div>
+        <div class="team-element">
+          <img
+            src="https://images.pexels.com/photos/936229/pexels-photo-936229.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            alt="speed"
+          />
+          <h2 class="team-name">
+            Ringo
+          </h2>
+        </div>
+        <div class="team-element">
+          <img
+            src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            alt="vintage"
+          />
+          <h2 class="team-name">
+            Georges
+          </h2>
+        </div>
+      </div>
+    </section>
+    <section id="contact-us">
+      <h1 class="title">Contact Us</h1>
+      <p><i class="fas fa-phone-alt"></i> +33 6 42 42 42 42</p>
+      <p><i class="fas fa-envelope"></i> <a href="#">contact@styl.us</a></p>
+    </section>
+    <footer id="main-footer">
+      <div class="social-links">
+        <a href="#" class="footer-link">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="#" class="footer-link">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="footer-link">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="#" class="footer-link">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+      <div class="footer-text">
+        <p>Stylus is a fictive product by LeWagon</p>
+        <p>Challenge accepted by Berk Açıkgöz, &copy; 2019.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
