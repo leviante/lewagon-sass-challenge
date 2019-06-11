@@ -26,7 +26,7 @@ for (let btn of orderBtn) {
   btn.addEventListener("click", showForm);
 }
 
-//exit form click events
+//exit form click event (using exit button)
 exitBtn.addEventListener("click", exitForm);
 
 //listen document to click-close modal form page

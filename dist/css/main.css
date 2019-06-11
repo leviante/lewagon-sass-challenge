@@ -37,8 +37,8 @@
 #header {
   position: fixed;
   display: flex;
-  flex-direction: row;
   align-items: center;
+  flex-direction: row;
   background-color: transparent;
   height: auto;
   width: 100%;
@@ -55,11 +55,9 @@
     transition: all 0.3s ease-out; }
   #header #header-nav {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: flex-end;
     width: 100%; }
-    #header #header-nav .hamburger {
-      visibility: hidden; }
     #header #header-nav .nav-links {
       margin: 8px; }
       #header #header-nav .nav-links .link {
@@ -168,8 +166,8 @@
 #info-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   background-color: #459ae0; }
   #info-section .grid-container {
     display: grid;
@@ -178,10 +176,10 @@
     margin: 10rem 0 8rem 0; }
     #info-section .grid-container .info-element {
       display: flex;
-      opacity: 0;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      opacity: 0;
       color: #f2f2f2;
       text-align: center;
       padding: 20px; }

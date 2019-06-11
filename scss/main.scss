@@ -14,9 +14,8 @@
 // ------------------------------------------------------------------ //
 #header {
   position: fixed;
-  display: flex;
+  @include flex_align;
   flex-direction: row;
-  align-items: center;
   background-color: transparent;
   height: auto;
   width: 100%;
@@ -39,21 +38,16 @@
   }
 
   #header-nav {
-    display: flex;
+    @include flex_align;
     justify-content: flex-end;
-    align-items: center;
     width: 100%;
-
-    .hamburger {
-      visibility: hidden;
-    }
 
     .nav-links {
       margin: 8px;
 
       .link {
         display: inline-block;
-        font-family: "Questrial", sans-serif;
+        font-family: $font-ques;
         letter-spacing: 0.2px;
         margin-right: 20px;
         text-decoration: none;
@@ -62,7 +56,7 @@
         &:last-child {
           background-color: #ee5f5c;
           border-radius: 3px;
-          font-family: "Encode Sans Semi Expanded", sans-serif;
+          font-family: $font-encode;
           font-weight: bold;
           font-size: 13px;
           padding: 13px 10px;
@@ -116,7 +110,7 @@
           a {
             display: block;
             text-decoration: none;
-            font-family: "Questrial", sans-serif;
+            font-family: $font-ques;
             color: #333;
             margin: 5px 0px;
             padding: 10px 0px 5px 15px;
@@ -163,7 +157,7 @@
   }
 
   .branding {
-    font-family: "Montserrat", sans-serif;
+    font-family: $font-mont;
     font-size: 70px;
     font-weight: 200;
     margin: 10rem 0 2rem 3rem;
@@ -171,7 +165,7 @@
 
   .motto {
     display: inline-block;
-    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-family: $font-encode;
     font-size: 25px;
     line-height: 2.1;
     margin: 0 3rem 1rem 3rem;
@@ -181,7 +175,7 @@
     background: transparent;
     text-decoration: none;
     color: whitesmoke;
-    font-family: "Montserrat", sans-serif;
+    font-family: $font-mont;
     border: 1px solid whitesmoke;
     border-radius: 18px;
     padding: 12px 14px;
@@ -201,10 +195,8 @@
 // ------------------------------------------------------------------ //
 
 #info-section {
-  display: flex;
-  flex-direction: column;
+  @include flex_col_align;
   justify-content: center;
-  align-items: center;
   background-color: #459ae0;
 
   .grid-container {
@@ -214,24 +206,22 @@
     margin: 10rem 0 8rem 0;
 
     .info-element {
-      display: flex;
-      opacity: 0;
-      flex-direction: column;
+      @include flex_col_align;
       justify-content: center;
-      align-items: center;
+      opacity: 0;
       color: darken(white, 5);
       text-align: center;
       padding: 20px;
 
       h3 {
-        font-family: "Questrial", sans-serif;
+        font-family: $font-ques;
         font-size: 22px;
         letter-spacing: 1px;
         margin-bottom: 10px;
       }
 
       p {
-        font-family: "Encode Sans Semi Expanded", sans-serif;
+        font-family: $font-encode;
         span {
           font-weight: bold;
         }
@@ -256,22 +246,20 @@
 // ------------------------------------------------------------------ //
 
 #get-news {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex_col_align;
   height: 100vh;
   background-color: #eee;
 
   h2 {
     margin: 10rem 0 2rem 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: $font-mont;
     font-size: 50px;
     font-weight: 200;
     text-align: center;
   }
 
   p {
-    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-family: $font-encode;
     margin-bottom: 1rem;
   }
 
@@ -286,7 +274,7 @@
 
   #btn-subscribe {
     background-color: #459ae0;
-    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-family: $font-encode;
     font-size: 16px;
     color: white;
     padding: 8px 10px;
@@ -305,15 +293,13 @@
 // --------------------------------------------------------------------------- //
 
 #pricing {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex_col_align;
   background-color: #eee;
   min-height: 100vh;
   width: 100%;
 
   #pricing-title {
-    font-family: "Montserrat", sans-serif;
+    font-family: $font-mont;
     font-size: 3.5rem;
     font-weight: 200;
     margin: 150px 0px;
@@ -328,9 +314,7 @@
     margin-bottom: 50px;
 
     .price-element {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include flex_col_align;
       justify-content: center;
       background-color: #fff;
       text-align: center;
@@ -344,7 +328,7 @@
       }
 
       h3 {
-        font-family: "Questrial", sans-serif;
+        font-family: $font-ques;
         font-weight: 200;
         font-size: 20px;
         font-weight: 200;
@@ -353,7 +337,7 @@
 
         @each $key, $color in $button-colors {
           &.#{$key}-price span {
-            font-family: "Encode Sans Semi Expanded", sans-serif;
+            font-family: $font-encode;
             font-size: 14px;
             font-weight: bold;
             border-radius: 3px;
@@ -365,7 +349,7 @@
         }
       }
       p {
-        font-family: "Encode Sans Semi Expanded", sans-serif;
+        font-family: $font-encode;
         line-height: 1.5;
         margin: 5px 5px 15px 5px;
 
@@ -383,9 +367,7 @@
 
 #team-section,
 #contact-us {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex_col_align;
 }
 
 #team-section {
@@ -406,11 +388,9 @@
     margin-bottom: 50px;
 
     .team-element {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include flex_col_align;
       justify-content: center;
-      font-family: "Questrial", sans-serif;
+      font-family: $font-ques;
       text-align: center;
 
       img {
@@ -432,7 +412,7 @@
 
   .title,
   p {
-    font-family: "Questrial", sans-serif;
+    font-family: $font-ques;
   }
 
   .title {
@@ -466,7 +446,7 @@
 .title {
   font-size: 2.5rem;
   font-weight: 200;
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-mont;
 }
 
 // ------------------------------------------------------------------ //
@@ -474,8 +454,7 @@
 // ------------------------------------------------------------------ //
 
 #main-footer {
-  display: flex;
-  align-items: center;
+  @include flex_align;
   background-color: #222;
   min-height: 20vh;
 
@@ -498,7 +477,7 @@
 
   .footer-text {
     color: #eee;
-    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-family: $font-encode;
     margin: 1rem 6rem 1rem auto;
 
     p {
@@ -528,9 +507,7 @@
 
 .form-div {
   position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex_col_align;
   width: 100%;
   height: 100vh;
   z-index: 6;
@@ -563,7 +540,7 @@
 
     .form-title {
       display: flex;
-      font-family: "Montserrat", sans-serif;
+      font-family: $font-mont;
       font-size: 20px;
       border-bottom: 1px solid darken(#eee, 20);
       padding: 15px 10px;
@@ -579,7 +556,7 @@
       }
     }
     .label {
-      font-family: "Encode Sans Semi Expanded", sans-serif;
+      font-family: $font-encode;
       font-weight: bold;
       margin: 15px 0 5px 12px;
     }
@@ -597,7 +574,7 @@
       align-self: flex-start;
       background-color: #ee5f5c;
       color: #fff;
-      font-family: "Questrial", sans-serif;
+      font-family: $font-ques;
       font-size: 20px;
       border: none;
       border-radius: 5px;

@@ -1,10 +1,25 @@
 $effect-color: #fdb630;
+$font-mont: "Montserrat", sans-serif;
+$font-encode: "Encode Sans Semi Expanded", sans-serif;
+$font-ques: "Questrial", sans-serif;
+
 $button-colors: (
   basic: #ee5f5c,
   smart: #459ae0,
   speed: #eb7e21,
   vintage: #32b796
 );
+
+@mixin flex_col_align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flex_align {
+  display: flex;
+  align-items: center;
+}
 
 @mixin easeOut {
   transition: all 0.3s ease-out;
