@@ -146,7 +146,7 @@
   background-repeat: no-repeat;
   color: #fff;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 
   .branding,
   .motto,
@@ -180,6 +180,7 @@
     border-radius: 18px;
     padding: 12px 14px;
     margin-left: 3rem;
+    margin-bottom: 10rem;
 
     &:hover {
       cursor: pointer;
@@ -247,7 +248,7 @@
 
 #get-news {
   @include flex_col_align;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #eee;
 
   h2 {
@@ -263,27 +264,31 @@
     margin-bottom: 1rem;
   }
 
-  #email-input {
-    font-size: 16px;
-    border: 1px solid grey;
-    border-radius: 3px;
-    width: 200px;
-    height: 35px;
-    padding: 10px;
-  }
+  #subscribe {
+    margin-bottom: 10rem;
 
-  #btn-subscribe {
-    background-color: #459ae0;
-    font-family: $font-encode;
-    font-size: 16px;
-    color: white;
-    padding: 8px 10px;
-    border: 1px solid #459ae0;
-    border-radius: 3px;
+    #email-input {
+      font-size: 16px;
+      border: 1px solid grey;
+      border-radius: 3px;
+      width: 200px;
+      height: 35px;
+      padding: 10px;
+    }
 
-    &:hover {
-      background-color: darken(#459ae0, 17);
-      @include easeOut();
+    #btn-subscribe {
+      background-color: #459ae0;
+      font-family: $font-encode;
+      font-size: 16px;
+      color: white;
+      padding: 8px 10px;
+      border: 1px solid #459ae0;
+      border-radius: 3px;
+
+      &:hover {
+        background-color: darken(#459ae0, 17);
+        @include easeOut();
+      }
     }
   }
 }
@@ -438,7 +443,7 @@
     }
 
     &:last-child {
-      margin-top: 15px;
+      margin: 15px 0px 200px 0px;
     }
   }
 }
